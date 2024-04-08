@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td, th {
+            padding: 8px;
+        }
+
+        .attention {
+            background-color: lightcoral;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="statsTable">
+        <tr>
+            <td>Січень</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Лютий</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>Березень</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>Квітень</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Травень</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Червень</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>Липень</td>
+            <td>100</td>
+        </tr>
+    </table>
+
+    <script>
+        /*
+        Завдання:
+        Напишіть сценарій, який додасть клас attention рядкам таблиці, в яких у другій колонці розташовані значення менше ніж 100.
+        */
+       function attentions() {
+            let tdList = document.querySelectorAll('tr td:nth-child(2)');
+            tdList.forEach(td => {
+              
+                if (parseInt(td.textContent) < 100) {
+                    td.parentElement.classList.add("attention");
+                }
+            });
+       }
+
+       attentions();
+
+        </script>
+</body>
+
+</html>
